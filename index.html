@@ -5,104 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>profile</title>
     <style>
-        body {
-            margin: 0 auto;
-            padding: 0 auto;
-            background-color: #f4f4f4;
-        }
-        .header .container .navbar {
-            background-color: #333;
-            color: #fff;
-            padding: 0 15px;
-        }
         .container {
-            padding: 0 15px;
-            width: 80%;
-            margin: auto;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .header .navbar .nav-content {
+        .header {
             display: flex;
-            justify-content: space-between;
+            justify-self: space-between;
             align-items: center;
-        }
-        .header .navbar .nav-content .logo {
-            font-size: 24px;
-            text-decoration: none;
-            color: #fff;
-        }
-        .header .navbar .nav-content .nav-links {
-            list-style: none;
-            padding: 0;
-        }
-        .header .navbar .nav-content .nav-links li {
-            display: inline;
-            margin-left: 20px;
-        }
-        .header .navbar .nav-content .nav-links a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .profile .card {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 20px 0;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-        }
-        .profile .card img {
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .footer .footer-main {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
             padding: 10px 0;
-            margin-top: 20px;
         }
-        /* Tablet */
-        @media (max-width: 820px){
-            .container{
-                padding: 20px;
-                max-width: 1200px;
+        .nav-content { 
+            display: flex; 
+            align-items: center;
+            gap: 30px; 
+            background-color: bisque;
+            justify-content: space-between;
+        }
+        .nav-content .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-content .nav-links a {
+            text-decoration: none;
+            color: black;
+        }
+        .profile-main {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .profile-main .card {
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: left;
+            justify-self: center;
+        }
+        .profile-main .card img {
+            display: flex;
+            border-radius: 50%;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+        }
+        /*tablet*/
+        @media (max-width: 820px) {
+            .container {
+                padding: 0 20px;
                 margin: 0 auto;
             }
-            .header .navbar .nav-content {
+            .navbar .nav-content {
+                padding: 0 30px;
+                gap: 10px;
+                text-align: center;
+                justify-content: center;
                 display: flex;
-                justify-content: space-between;
-                flex-direction: row;
+            }
+            .profile-main {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+            .profile-main .card {
+                max-width: none;
+            }
+            .footer .footer-main {
+                padding: 20px 0;
                 align-items: center;
             }
-            .profile .card {
-                display: flex;
-                gap: 20px;
-                width: 50%;
-            }
-            .profile {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap;
-            ;
-            }
         }
-        /* Desktop */
-        @media (min-width: 1024px){
+        /*desktop*/
+        @media (min-width: 1024px) {
             .container {
-                padding: 20px;
-                max-width: 1200px;
+                padding: 0 20px;
                 margin: 0 auto;
             }
-            .profile .card {
+            .navbar .nav-content {
                 display: flex;
-                gap: 20px;
-            }
-            .profile {
-                display: flex;
+                gap: 10px;
+                text-align: center;
+                width: 80vw;
+                padding: 0 50px;
                 justify-content: space-between;
-                flex-wrap: wrap;
+                align-items: center;
+                background-color: bisque;
             }
+            .profile-main {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+            .profile-main .card {
+                max-width:  none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .footer-main {
+                padding: 20px 0;
+                align-items: center;
+                justify-content: center;
+            }  
         }
     </style>
 </head>
@@ -111,12 +124,11 @@
         <div class="container">
             <nav class="navbar">
                 <div class="nav-content">
-                    <a href="#" class="logo">Froxa Studio</a>
+                    <h1>Froxa Studio</h1>
                     <ul class="nav-links">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
@@ -126,25 +138,41 @@
     <main>
         <section class="profile">
             <div class="container">
-                <div class="card">
-                    <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
-                    <div>
-                        <h3>Card Title 1</h3>
-                        <p>This is the content for card 1.</p>
+                <div class="profile-main">
+                    <div class="card">
+                        <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
+                        <div>
+                            <h3>Card Title 1</h3>
+                            <p>This is the content for card 1.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
-                    <div>
-                        <h3>Card Title 2</h3>
-                        <p>This is the content for card 2.</p>
+                    <div class="card">
+                        <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
+                        <div>
+                            <h3>Card Title 2</h3>
+                            <p>This is the content for card 2.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
-                    <div>
-                        <h3>Card Title 3</h3>
-                        <p>This is the content for card 3.</p>
+                    <div class="card">
+                        <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
+                        <div>
+                            <h3>Card Title 3</h3>
+                            <p>This is the content for card 3.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
+                        <div>
+                            <h3>Card Title 4</h3>
+                            <p>This is the content for card 3.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://i.pinimg.com/1200x/5a/b4/9b/5ab49b1a9d5dd504f2a3bdec83b4294a.jpg" alt="Foto profil placeholder" width="150" height="150">
+                        <div>
+                            <h3>Card Title 5</h3>
+                            <p>This is the content for card 3.</p>
+                        </div>
                     </div>
                 </div>
             </div>
